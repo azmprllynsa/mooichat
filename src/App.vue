@@ -1,32 +1,76 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+<router-view></router-view>
 </template>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+
+@font-face {
+  font-family: "Airbnb Cereal App Black";
+  src: url("../src/assets/font/AirbnbCereal-Black.ttf") format("truetype");
 }
 
-#nav {
-  padding: 30px;
+@font-face {
+  font-family: "Airbnb Cereal App Bold";
+  src: url("../src/assets/font/AirbnbCereal-Bold.ttf") format("truetype");
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+@font-face {
+  font-family: "Airbnb Cereal App Book";
+  src: url("../src/assets/font/AirbnbCereal-Book.ttf") format("truetype");
+}
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+@font-face {
+  font-family: "Airbnb Cereal App ExtraBold";
+  src: url("../src/assets/font/AirbnbCereal-ExtraBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Airbnb Cereal App Light";
+  src: url("../src/assets/font/AirbnbCereal-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Airbnb Cereal App Medium";
+  src: url("../src/assets/font/AirbnbCereal-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Brown Regular";
+  src: url("../src/assets/font/brown-regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Naila";
+  src: url("../src/assets/font/Darling Suttine.ttf");
+}
+  .bg-orange{
+    background-color: #ff5f33;
+    color: #f5f5f5;
   }
-}
+  .bg-pink{
+    background-color: #F24F8A;
+    color: #f5f5f5;
+  }
+  .orange{
+    color: #ff5f33;
+  }
+  .orange-bg{
+    color: #ff5f33;
+    background-color: rgb(252, 207, 126);
+  }
+  .pink{
+    color: #F24F8A;
+  }
+
+  .yellow{
+    color: rgb(252, 207, 126);
+  }
+  .hide{
+    transition: 1s;
+    display: none !important;
+  }
+  .show{
+    transition: 1s;
+    display: block !important;
+  }
 </style>
