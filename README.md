@@ -18,6 +18,7 @@
 - [Prerequiste](#prerequiste)
 - [Installation](#installation)
 - [Screenshots](#screenshots)
+- [Contact] (#contact)
 
 ## Features
 
@@ -62,6 +63,11 @@ $ npm run serve
     <img width="286" src="./screenshoot/Mooichat-Profile.jpg">
 
 </div>
+
+## Contact
+You can contact me via:
+- [Instagram](https://instagram.com/azmprllynsa)
+- [Email](azmi.naisa@gmail.com)
 
 ---
 Copyright © 2020 [Azmi Prilly Naisa](https://github.com/azmprllynsa/)
