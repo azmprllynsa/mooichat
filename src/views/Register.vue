@@ -58,7 +58,7 @@ export default {
       email: '',
       password: '',
       displayName: '',
-      imageProfile: 'https://firebasestorage.googleapis.com/v0/b/chatmee-3a979.appspot.com/o/profil%2Fuser-profile.png?alt=media&token=54d73fa0-5b19-499f-9032-b659df1d10d1',
+      imageProfile: 'https://firebasestorage.googleapis.com/v0/b/mooichat-room.appspot.com/o/mooichat.png?alt=media&token=29af3d2f-27f7-4583-aef3-bc775ba954f2',
     };
   },
   methods: {

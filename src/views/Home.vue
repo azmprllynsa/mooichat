@@ -3,7 +3,7 @@
     <div class="columns is-gapless container">
       <div class="column is-gapless is-4 sidebar">
         <div class=" navbar column is-gapless bg-orange">
-          <div class="column lists">
+          <div class="column lists" @click="friendsInfo">
             MooiChat
           </div>
           <div class="column panels">
@@ -12,7 +12,8 @@
                aria-haspopup="true" aria-expanded="false">
                <i class="fas fa-ellipsis-v" aria-hidden="true"></i></button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="#" @click="logout">Logout</a>
+                  <div class="dropdown-item" @click="terserahLah">Profile</div>
+                  <div class="dropdown-item" @click="logout">Logout</div>
                 </div>
               </div>
           </div>
@@ -39,13 +40,13 @@
             <div class="listimage">
               <img :src="bannerName.imageProfile" alt="" >
             </div>
-            <div class="listname">
+            <div class="listname" @click="friendsInfo">
               <h3>{{bannerName.displayName}}</h3>
             </div>
           </div>
         </div>
         <div class="column messages">
-          <div class="chat-empty full">
+          <div class="chat-empty">
             <h1>Please select a chat to start messaging</h1>
           </div>
           <div class="column mesgs">
@@ -71,15 +72,22 @@
       </div>
     </div>
   </div>
+  <friends-info v-bind:friends="bannerName"/>
 </div>
 </template>
 
 <script>
 import firebase from 'firebase';
 import db from '../firebaseInit';
+// import Modal from '../components/module/Modal.vue';
+import friendsInfo from '../components/module/FriendsInfo.vue';
 
 export default {
   name: 'chat',
+  components: {
+    // Modal,
+    friendsInfo,
+  },
   data() {
     return {
       message: null,
@@ -109,8 +117,6 @@ export default {
           // eslint-disable-next-line prefer-const
           let allMessage = [];
           querySnapshot.forEach((doc) => {
-            console.log(doc.data().message);
-
             if ((doc.data().received === this.bannerName.email && doc.data().sender
             === this.authUser.email && doc.data().message !== null && doc.data().message !== ' ')
             || (doc.data().received === this.authUser.email
@@ -137,6 +143,17 @@ export default {
         });
       });
     },
+
+    terserahLah() {
+      const showProfil = document.querySelector('.profil');
+      showProfil.classList.toggle('hide');
+    },
+
+    friendsInfo() {
+      const friends = document.querySelector('.friendsinfo');
+      friends.classList.toggle('hide');
+    },
+
     contactList(e) {
       const empty = document.querySelector('.chat-empty');
       const chat = document.querySelector('.mesgs');
@@ -180,6 +197,9 @@ export default {
 
 
 <style scoped>
+img {
+  border-radius: 50%
+}
 .body{
   display: flex;
   justify-content: center;
@@ -191,12 +211,8 @@ export default {
 }
 .container{
   padding: 0px !important;
-  width: 95%;
-  min-width: 360px;
-  max-width: 1010px;
-  height: 96vh;
-  min-height: 300px;
-  max-height: 720px;
+  width: 100vw;
+  height: 100vh;
   background: #E6EAEA;
 }
 .sidebar{
@@ -231,7 +247,7 @@ export default {
 }
 
 .chat-contact{
-  height: 600px;
+  height: 640px;
   overflow-y: scroll;
 }
 
@@ -388,6 +404,16 @@ background-color: #fff;
   width: 100%;
 }
 
+.received_msg p {
+  background: #f5f5f5 none repeat scroll 0 0;
+  border-radius: 3px;
+  font-size: 14px;
+  color:#ff5f33;
+  padding: 5px 10px 5px 12px;
+  border-radius: 10px;
+  float: left;
+}
+
 .received_withd_msg p {
   background: #ebebeb none repeat scroll 0 0;
   border-radius: 3px;
@@ -414,7 +440,7 @@ background-color: #fff;
 }
 
 .sent_msg p {
-  background: #05728f none repeat scroll 0 0;
+  background: #ff5f33 none repeat scroll 0 0;
   border-radius: 3px;
   font-size: 14px;
   color:#fff;
@@ -430,9 +456,9 @@ background-color: #fff;
   /* width: 46%; */
 }
 
-.imput_msg_write {
-  padding-top: -20px !important;
-}
+/* .input_msg_write {
+  margin-top: 20px !important;
+} */
 
 .input_msg_write input {
   background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
@@ -462,7 +488,7 @@ background-color: #fff;
 }
 
 .msg_history {
-  height: 480px;
+  height: 570px;
   overflow-y: auto;
 }
 
