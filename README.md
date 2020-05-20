@@ -7,10 +7,9 @@
 
 <p align="center">
   <img height="100" src="./screenshoot/mooichat3.png"/>&nbsp;
-  <img height="100" src="https://vuejs.org/images/logo.png">
 </p>
 <p align="center">
-  Built with Vue Js.
+  Built with Vue Js. and Firebase
 </p>
 
 ## Table of Contents
