@@ -11,7 +11,7 @@
   "dependencies": {
     "bulma": "^0.8.2",
     "core-js": "^3.6.4",
-    "firebase": "^7.14.2",
+    "firebase": "^10.9.0",
     "google-maps-api-loader": "^1.1.1",
     "vue": "^2.6.11",
     "vue-browser-geolocation": "^1.8.0",
